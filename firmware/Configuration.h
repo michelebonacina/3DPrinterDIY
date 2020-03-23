@@ -10,22 +10,28 @@
 // Advanced settings can be found in Configuration_adv.h
 
 
+// MIC: Base configuration
+#define SPEED_RATIO         0.2  // speed ratio variation
+#define ACCELERATION_RATIO  0.2  // acceleration ratio variation
+
+
 #include "boards.h"
 // Choose your board type.
 // Either an numeric ID or name defined in boards.h is valid.
 // See: https://github.com/MagoKimbra/MarlinKimbra/blob/master/Documentation/Hardware.md
 
-#define MOTHERBOARD BOARD_RAMPS_13_EFF
+#define MOTHERBOARD BOARD_RAMPS_13_EFB
 
 // User-specified version info of this build to display in [Pronterface, etc] terminal window during
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
 #define STRING_VERSION "4.1.2"
+#define STRING_VERSION_MECH "0.0.1"
 #define STRING_URL "reprap.org"
-#define STRING_VERSION_CONFIG_H __DATE__ " " __TIME__     // build date and time
-#define STRING_CONFIG_H_AUTHOR "(Mic, Mech v0.1)"   // Who made the changes
-#define STRING_SPLASH_LINE1 "v" STRING_VERSION            // will be shown during bootup in line 1
-#define STRING_SPLASH_LINE2 STRING_VERSION_CONFIG_H       // will be shown during bootup in line 2
+#define STRING_VERSION_CONFIG_H __DATE__ " " __TIME__                          // build date and time
+#define STRING_CONFIG_H_AUTHOR "(Mic)"                                         // Who made the changes
+#define STRING_SPLASH_LINE1 "MK" STRING_VERSION " Mech" STRING_VERSION_MECH    // will be shown during bootup in line 1
+#define STRING_SPLASH_LINE2 STRING_VERSION_CONFIG_H                            // will be shown during bootup in line 2
 
 // SERIAL_PORT selects which serial port should be used for communication with the host.
 // This allows the connection of wireless adapters (for instance) to non-default port pins.
@@ -34,7 +40,7 @@
 
 // This determines the communication speed of the printer
 // 115200 - 250000
-#define BAUDRATE 250000
+#define BAUDRATE 115200
 
 // This enables the serial port associated to the Bluetooth interface on AT90USB devices
 //#define BTENABLED
@@ -224,9 +230,9 @@
 #define K1 0.95 // Smoothing factor within the PID
 
 //             HotEnd{HE0,HE1,HE2,HE3}
-#define DEFAULT_Kp {39.78,39.78,39.78,39.78}      // Kp for E0, E1, E2, E3
-#define DEFAULT_Ki {7.08,7.08,7.08,7.08}      // Ki for E0, E1, E2, E3
-#define DEFAULT_Kd {55.88,55.88,55.88,55.88}      // Kd for E0, E1, E2, E3
+#define DEFAULT_Kp {18.99,39.78,39.78,39.78}      // Kp for E0, E1, E2, E3
+#define DEFAULT_Ki {1.48,7.08,7.08,7.08}      // Ki for E0, E1, E2, E3
+#define DEFAULT_Kd {60.99,55.88,55.88,55.88}      // Kd for E0, E1, E2, E3
 //===========================================================================
 
 
