@@ -56,7 +56,7 @@
 #define DISABLE_INACTIVE_EXTRUDER false //disable only inactive extruder and keep active extruder enabled
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR true
+#define INVERT_X_DIR false
 #define INVERT_Y_DIR false
 #define INVERT_Z_DIR false
 #define INVERT_E0_DIR false
@@ -65,12 +65,13 @@
 #define INVERT_E3_DIR false
 
 // Travel limits after homing (units are in mm)
-#define X_MAX_POS 230
+// center in x=93 y=77
+#define X_MAX_POS 190
 #define X_MIN_POS -20
-#define Y_MAX_POS 320
+#define Y_MAX_POS 170
 #define Y_MIN_POS 0
 #define Z_MAX_POS 260
-#define Z_MIN_POS -0.65
+#define Z_MIN_POS -1.2
 #define E_MIN_POS 0
 
 //=====================================================================================

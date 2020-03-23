@@ -11,8 +11,8 @@
 
 
 // MIC: Base configuration
-#define SPEED_RATIO         0.2  // speed ratio variation
-#define ACCELERATION_RATIO  0.2  // acceleration ratio variation
+#define SPEED_RATIO         1    // speed ratio variation
+#define ACCELERATION_RATIO  1    // acceleration ratio variation
 
 
 #include "boards.h"
@@ -596,7 +596,7 @@
 //===========================================================================
 //============================= Filament Runout Sensor ======================
 //===========================================================================
-#define FILAMENT_RUNOUT_SENSOR // Uncomment for defining a filament runout sensor such as a mechanical or opto endstop to check the existence of filament
+//#define FILAMENT_RUNOUT_SENSOR // Uncomment for defining a filament runout sensor such as a mechanical or opto endstop to check the existence of filament
                                  // It is assumed that when logic high = filament available
                                  //                    when logic  low = filament run out
 #ifdef FILAMENT_RUNOUT_SENSOR

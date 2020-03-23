@@ -47,3 +47,12 @@ Added configuration parameters of the speed and acceleration coefficient
 Execute PID Autotune: Kp = 18.99 - Ki = 1.48 - Kd = 60.99
 
 Calibrated home point
+
+### v 1.1.0
+Inverted X axis motor for new support installation with belt tensioner
+
+New offset set for hotend in Home position
+
+Set the speed and acceleration coefficient to 1
+
+The wire end sensor has been disabled to allow SD card operation
