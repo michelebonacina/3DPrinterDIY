@@ -56,21 +56,21 @@
 #define DISABLE_INACTIVE_EXTRUDER false //disable only inactive extruder and keep active extruder enabled
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR false
-#define INVERT_Y_DIR true
+#define INVERT_X_DIR true
+#define INVERT_Y_DIR false
 #define INVERT_Z_DIR false
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR false
 #define INVERT_E1_DIR true
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
 
 // Travel limits after homing (units are in mm)
 #define X_MAX_POS 230
-#define X_MIN_POS -8
+#define X_MIN_POS -20
 #define Y_MAX_POS 320
-#define Y_MIN_POS -15
+#define Y_MIN_POS 0
 #define Z_MAX_POS 260
-#define Z_MIN_POS 0
+#define Z_MIN_POS -0.65
 #define E_MIN_POS 0
 
 //=====================================================================================
@@ -184,10 +184,12 @@
 #define HOMING_FEEDRATE {140*60,140*60,4*60,0}      // set the homing speeds (mm/min)
 
 // default settings
-#define DEFAULT_AXIS_STEPS_PER_UNIT {160,160,6400,1240,1240,1240,1240}      // X, Y, Z, E0, E1, E2, E3 default steps per unit
-#define DEFAULT_MAX_FEEDRATE {150,150,4,50,50,50,50}      // X, Y, Z, E0, E1, E2, E3 (mm/sec)
+#define DEFAULT_AXIS_STEPS_PER_UNIT {80,80,1065,95,1240,1240,1240}      // X, Y, Z, E0, E1, E2, E3 default steps per unit
+// MIC: #define DEFAULT_MAX_FEEDRATE {150,150,4,50,50,50,50}      // X, Y, Z, E0, E1, E2, E3 (mm/sec)
+#define DEFAULT_MAX_FEEDRATE {150*SPEED_RATIO,150*SPEED_RATIO,4*SPEED_RATIO,50*SPEED_RATIO,50*SPEED_RATIO,50*SPEED_RATIO,50*SPEED_RATIO}      // X, Y, Z, E0, E1, E2, E3 (mm/sec)
 #define DEFAULT_RETRACTION_MAX_FEEDRATE {100,100,100,100}                  // E0, E1, E2, E3 (mm/sec)
-#define DEFAULT_MAX_ACCELERATION {5000,5000,20,5000,5000,5000,5000}      // X, Y, Z, E0, E1, E2, E3 maximum start speed for accelerated moves.
+// MIC: #define DEFAULT_MAX_ACCELERATION {5000,5000,20,5000,5000,5000,5000}      // X, Y, Z, E0, E1, E2, E3 maximum start speed for accelerated moves.
+#define DEFAULT_MAX_ACCELERATION {5000*ACCELERATION_RATIO,5000*ACCELERATION_RATIO,20*ACCELERATION_RATIO,5000*ACCELERATION_RATIO,5000*ACCELERATION_RATIO,5000*ACCELERATION_RATIO,5000*ACCELERATION_RATIO}      // X, Y, Z, E0, E1, E2, E3 maximum start speed for accelerated moves.
 
 #define DEFAULT_ACCELERATION 2000      // X, Y, Z and E max acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION 4000      // E max acceleration in mm/s^2 for retracts
