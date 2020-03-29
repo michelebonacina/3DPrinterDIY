@@ -6,7 +6,7 @@ Self made 3D Printer Project
 ### MarlinKimbraR2
 This is the original firmware version, used without the hot bed.
 
-Trying tu activate hot bed causes prolems: port 8 remains always down. Till now no solution.
+Trying to activate hot bed causes prolems: port 8 remains always down. Till now no solution.
 
 ## Versions
 ### v 0.0.0
