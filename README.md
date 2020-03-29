@@ -1,7 +1,14 @@
 # 3D Printer DIY
 Self made 3D Printer Project
 
+
 ## Firmware
+### MarlinKimbraR2
+This is the original firmware version, used without the hot bed.
+
+Trying tu activate hot bed causes prolems: port 8 remains always down. Till now no solution.
+
+## Versions
 ### v 0.0.0
 Firmware initial version
 
@@ -56,3 +63,6 @@ New offset set for hotend in Home position
 Set the speed and acceleration coefficient to 1
 
 The wire end sensor has been disabled to allow SD card operation
+
+### v 1.2.0
+Renamed firmware to MarlinKimbraR2
