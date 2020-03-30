@@ -40,18 +40,18 @@ Configured X and Y axis motor steps:
   - step value for mm = 80
 
 Z-axis motor steps configured:
-. motor step angle = 1.8 °
-. microstepping driver = 1/16
-. thread pitch = M12 (1.75mm per revolution)
-. transmission ratio = 1: 1
-  . step value for mm = 1828.5714 ---> NOT CORRECT
-  . by attempts -> step value for mm = 1065
+- motor step angle = 1.8 °
+- microstepping driver = 1/16
+- thread pitch = M12 (1.75mm per revolution)
+- transmission ratio = 1: 1
+  - step value for mm = 1828.5714 ---> NOT CORRECT
+  - by attempts -> step value for mm = 1065
 
 Extruder motor steps E0 configured:
-. number of steps originally set = 1240
-. extrusion length required = 50mm
-. extruded wire length = 651mm
-  . step to be set = 95.238
+- number of steps originally set = 1240
+- extrusion length required = 50mm
+- extruded wire length = 651mm
+  - step to be set = 95.238
 
 Transfer rate set at 112500 baud for communication with Repetier-Host
 
