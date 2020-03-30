@@ -3,15 +3,19 @@ Self made 3D Printer Project
 
 
 ## Firmware
-### MarlinKimbraR2
+
+### MarlinKimbraR2 - version 1.x.y
 This is the original firmware version, used without the hot bed.
 
 Trying to activate hot bed causes prolems: port 8 remains always down. Till now no solution.
 
-### MK4duo 4.4.0
+### MK4duo 4.4.0 - version 2.x.y
 This new version add more feature and resolve the hot bed problem of the MarlinKimbraR2 firmware.
 
+*ATTENTION* Download SdFat library by Bill Greiman 1.1.1 or higher
+
 ## Versions
+
 ### v 0.0.0
 Firmware initial version
 
@@ -92,4 +96,7 @@ Calibrated estruder stepper
 Calibrated z stepper
 
 Enabled SD support
+
+### v 2.1.0
+Enabled hotend auto fan
 
