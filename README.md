@@ -87,4 +87,9 @@ Configured LCD panel
 
 Enabled hot bed
 
+Calibrated estruder stepper
+
+Calibrated z stepper
+
 Enabled SD support
+
