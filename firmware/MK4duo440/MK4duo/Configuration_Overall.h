@@ -732,7 +732,7 @@
 //#define EEPROM_SPI
 //#define EEPROM_SD
 //#define EEPROM_FLASH
-//#define SDSUPPORT
+#define SDSUPPORT
 //#define USB_FLASH_DRIVE_SUPPORT (NOT USED FOR NOW!!!)
 //#define ADVANCED_SD_COMMAND
 #define SD_HALF_SPEED
@@ -1601,7 +1601,7 @@
 "eeprom": "0",
 "eepromsd": "0",
 "eepromchitchat": "1",
-"sdsupport": "0",
+"sdsupport": "1",
 "sdspeed": 1,
 "sddisableddetect": "0",
 "sddetectinverted": "0",
