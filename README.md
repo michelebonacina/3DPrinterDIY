@@ -87,3 +87,4 @@ Configured LCD panel
 
 Enabled hot bed
 
+Enabled SD support
