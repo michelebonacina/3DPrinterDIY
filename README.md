@@ -73,3 +73,17 @@ Renamed firmware to MarlinKimbraR2
 ### v 2.0.0
 Added new version based on MK4duo 4.4.0 using the Prusa I3 R2 with A4988 (by NicolaP)
 
+Changed serial connection configuration
+
+Mapped Y axis stepper driver and Y min endstop pin to Z driver. Y axis have 2 motor and on the board there're 2 parallel driver for Z axis
+
+Mapped Z axis stepper driver and Z min endstop pin to Y driver. Y axis have 2 motor and on the board there're 2 parallel driver for Z axis.
+
+Calibrated max and min x, y, z axis limits
+
+Changed home axis order, y before x
+
+Configured LCD panel
+
+Enabled hot bed
+

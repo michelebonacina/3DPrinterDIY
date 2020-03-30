@@ -35,7 +35,7 @@
  * Configuration_Basic *
  ***********************/
 #define SERIAL_PORT_1 0
-#define BAUDRATE_1 250000
+#define BAUDRATE_1 115200
 #define SERIAL_PORT_2 -2
 #define BAUDRATE_2 115200
 #define BLOCK_BUFFER_SIZE 16
@@ -58,7 +58,7 @@
 #define DEFAULT_KEEPALIVE_INTERVAL 2
 #define MOTHERBOARD BOARD_RAMPS_13_HFB
 #define MECHANISM MECH_CARTESIAN
-#define POWER_SUPPLY 1
+#define POWER_SUPPLY 0
 //#define POWER_NAME "Generic"
 #define PS_DEFAULT_OFF false
 #define DELAY_AFTER_POWER_ON 5
@@ -94,7 +94,7 @@
 #define TEMP_SENSOR_AD595_OFFSET 0
 #define TEMP_SENSOR_AD595_GAIN 1
 #define DUMMY_THERMISTOR_998_VALUE 25
-#define DUMMY_THERMISTOR_999_VALUE 100
+#define DUMMY_THERMISTOR_999_VALUE 25
 #define TEMP_RESIDENCY_TIME 10  // (seconds)
 #define TEMP_WINDOW     1       // (degC) Window around target to start the residency timer x degC early.
 #define HOTEND_0_MAXTEMP 275
@@ -131,7 +131,7 @@
 #define PREHEAT_3_TEMP_BED 60
 #define PREHEAT_3_TEMP_CHAMBER 50
 #define PREHEAT_3_FAN_SPEED 255
-//#define AUTOTEMP
+#define AUTOTEMP
 #define AUTOTEMP_OLDWEIGHT 0.98
 //#define TEMP_STAT_LEDS
 #define HOTEND_PWM_FREQUENCY  250
@@ -147,9 +147,9 @@
 #define PID_AUTOTUNE_MENU // Add PID Autotune to the LCD "Temperature" menu to run M303 and apply the result.
 //#define PID_ADD_EXTRUSION_RATE
 #define LPQ_MAX_LEN 50
-#define HOTEND_Kp {14.75,41.51,41.51,41.51,40,40}
-#define HOTEND_Ki {0.95,7.28,7.28,7.28,7,7}
-#define HOTEND_Kd {57.27,59.17,59.17,59.17,60,60}
+#define HOTEND_Kp {40,40,40,40,40,40}
+#define HOTEND_Ki {7,7,7,7,7,7}
+#define HOTEND_Kd {60,60,60,60,60,60}
 #define HOTEND_Kc {100,100,100,100,100,100}
 #define PIDTEMPBED false
 #define BED_POWER_MAX 255
@@ -168,7 +168,7 @@
 #define CHAMBER_CHECK_INTERVAL 500
 #define CHAMBER_Kp {10,10,10,10}
 #define CHAMBER_Ki {1,1,1,1}
-#define CHAMBER_Kd {300,300,300,300}
+#define CHAMBER_Kd {305,300,300,300}
 #define PIDTEMPCOOLER false
 #define COOLER_POWER_MAX 255
 #define COOLER_POWER_DRIVE_MIN 80
@@ -207,7 +207,7 @@
  * Configuration_Cartesian *
  ***************************/
 #define KNOWN_MECH
-#define CUSTOM_MACHINE_NAME "Prusa I3 R2"
+#define CUSTOM_MACHINE_NAME "Generic"
 #define ENDSTOPPULLUP_XMIN true
 #define ENDSTOPPULLUP_YMIN true
 #define ENDSTOPPULLUP_ZMIN true
@@ -251,8 +251,8 @@
 #define Y_PROBE_OFFSET_FROM_NOZZLE 0
 #define Z_PROBE_OFFSET_FROM_NOZZLE -1
 #define XY_PROBE_SPEED 8000
-#define Z_PROBE_SPEED_FAST 1000
-#define Z_PROBE_SPEED_SLOW 500
+#define Z_PROBE_SPEED_FAST 200
+#define Z_PROBE_SPEED_SLOW 100
 #define Z_PROBE_REPETITIONS 1
 //#define PROBE_REPEATABILITY_TEST
 //#define PAUSE_BEFORE_DEPLOY_STOW
@@ -299,12 +299,12 @@
 #define DISABLE_Z false
 #define DISABLE_E false
 //#define DISABLE_INACTIVE_EXTRUDER
-#define X_MAX_POS 240
-#define X_MIN_POS -10
-#define Y_MAX_POS 270
-#define Y_MIN_POS -58
-#define Z_MAX_POS 240
-#define Z_MIN_POS 0
+#define X_MAX_POS 190
+#define X_MIN_POS -20
+#define Y_MAX_POS 170
+#define Y_MIN_POS 0
+#define Z_MAX_POS 260
+#define Z_MIN_POS -0.2
 #define E_MIN_POS 0
 #define AXIS_RELATIVE_MODES {false, false, false, false}
 //#define Z_SAFE_HOMING
@@ -337,27 +337,27 @@
 //#define MANUAL_X_HOME_POS 0
 //#define MANUAL_Y_HOME_POS 0
 //#define MANUAL_Z_HOME_POS 0
-#define DEFAULT_AXIS_STEPS_PER_UNIT {80,80,3200}
-#define DEFAULT_AXIS_STEPS_PER_UNIT_E {620,625,625,625,625,625,625,625,625,625,625,625}
-#define DEFAULT_MAX_FEEDRATE {1000,1000,3}
-#define DEFAULT_MAX_FEEDRATE_E {50,100,100,100,50,50,50,50,50,50,50,50}
+#define DEFAULT_AXIS_STEPS_PER_UNIT {80,80,4000}
+#define DEFAULT_AXIS_STEPS_PER_UNIT_E {625,625,625,625,625,625,625,625,625,625,625,625}
+#define DEFAULT_MAX_FEEDRATE {300,300,2}
+#define DEFAULT_MAX_FEEDRATE_E {100,100,100,100,100,100,50,50,50,50,50,50}
 #define MANUAL_FEEDRATE {100,100,2,10}
 #define SHORT_MANUAL_Z_MOVE           0.025
 #define DEFAULT_MIN_FEEDRATE          0.0
 #define DEFAULT_MIN_TRAVEL_FEEDRATE   0.0
 #define MINIMUM_PLANNER_SPEED         0.05                      // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION {5000,5000,50}
-#define DEFAULT_MAX_ACCELERATION_E {5000,3000,3000,3000,1000,1000,1000,1000,1000,1000,1000,1000}
-#define DEFAULT_RETRACT_ACCELERATION {5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000}
-#define DEFAULT_ACCELERATION 1000
-#define DEFAULT_TRAVEL_ACCELERATION 1000
+#define DEFAULT_MAX_ACCELERATION {3000,3000,50}
+#define DEFAULT_MAX_ACCELERATION_E {3000,3000,3000,3000,3000,3000,1000,1000,1000,1000,1000,1000}
+#define DEFAULT_RETRACT_ACCELERATION {10000,10000,10000,10000,10000,10000,5000,5000,5000,5000,5000,5000}
+#define DEFAULT_ACCELERATION 3000
+#define DEFAULT_TRAVEL_ACCELERATION 3000
 #define DEFAULT_XJERK 10
 #define DEFAULT_YJERK 10
 #define DEFAULT_ZJERK 0.4
 #define DEFAULT_EJERK {5,5,5,5,5,5,5,5,5,5,5,5}
 #define HOMING_FEEDRATE_X (100*60)
 #define HOMING_FEEDRATE_Y (100*60)
-#define HOMING_FEEDRATE_Z (3*60)
+#define HOMING_FEEDRATE_Z (2*60)
 //#define SLOW_HOMING
 #define X_HOME_BUMP_MM 5
 #define Y_HOME_BUMP_MM 5
@@ -373,7 +373,7 @@
 /*************************
  *   Configuration_LCD   *
  *************************/
-#define LCD_LANGUAGE en
+#define LCD_LANGUAGE it
 #define LCD_LANGUAGE_1 NO_LANGUAGE
 #define LCD_LANGUAGE_2 NO_LANGUAGE
 #define LCD_LANGUAGE_3 NO_LANGUAGE
@@ -384,7 +384,7 @@
 //#define ULTIMAKERCONTROLLER
 //#define ULTIPANEL
 //#define PANEL_ONE
-#define G3D_PANEL
+//#define G3D_PANEL
 //#define RIGIDBOT_PANEL
 //#define MAKEBOARD_MINI_2_LINE_DISPLAY_1602
 //#define ZONESTAR_LCD            // Requires ADC_KEYPAD_PIN to be assigned to an analog pin.
@@ -397,7 +397,7 @@
 //#define LCD_I2C_VIKI
 //#define RADDS_DISPLAY
 //#define SAV_3DLCD
-//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
+#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 //#define REPRAPWORLD_GRAPHICAL_LCD
 //#define VIKI2
 //#define miniVIKI
@@ -461,7 +461,7 @@
 //#define LCD_SCREEN_ROT_270   // Rotate screen orientation for graphics display by 270 degree clockwise
 //#define INVERT_CLICK_BUTTON           // Option for invert encoder button logic
 //#define INVERT_BACK_BUTTON            // Option for invert back button logic if avaible
-//#define REVERSE_ENCODER_DIRECTION
+#define REVERSE_ENCODER_DIRECTION
 //#define REVERSE_MENU_DIRECTION
 //#define REVERSE_SELECT_DIRECTION
 #define ENCODER_RATE_MULTIPLIER         // If defined, certain menu edit operations automatically multiply the steps when the encoder is moved quickly
@@ -598,10 +598,10 @@
 #define LIN_ADVANCE_K_FACTOR  0.02
 //#define WORKSPACE_OFFSETS
 #define DEFAULT_STEPPER_DEACTIVE_TIME 120
-#undef DISABLE_INACTIVE_X
-#undef DISABLE_INACTIVE_Y
-#undef DISABLE_INACTIVE_Z
-#undef DISABLE_INACTIVE_E
+#define DISABLE_INACTIVE_X
+#define DISABLE_INACTIVE_Y
+#define DISABLE_INACTIVE_Z
+#define DISABLE_INACTIVE_E
 #define MIN_SOFTWARE_ENDSTOPS
 #define MAX_SOFTWARE_ENDSTOPS
 #define ENDSTOPS_ONLY_FOR_HOMING
@@ -616,7 +616,7 @@
 //#define Z_LATE_ENABLE
 #define SLOWDOWN
 //#define QUICK_HOME
-//#define HOME_Y_BEFORE_X
+#define HOME_Y_BEFORE_X
 //#define FORCE_HOME_XY_BEFORE_Z
 //#define BABYSTEPPING
 //#define BABYSTEP_XY
@@ -789,7 +789,7 @@
 #define CASE_LIGHT_DEFAULT_BRIGHTNESS 255
 //#define CASE_LIGHT_USE_NEOPIXEL
 #define CASE_LIGHT_NEOPIXEL_COLOR { 255, 255, 255, 255 }
-#define DOUBLE_QUAD_STEPPING true
+#define DOUBLE_QUAD_STEPPING false
 //#define JUNCTION_DEVIATION
 #define JUNCTION_DEVIATION_MM 0.02
 //#define BEZIER_JERK_CONTROL
@@ -800,7 +800,7 @@
 #define X_MICROSTEPS 16
 #define Y_MICROSTEPS 16
 #define Z_MICROSTEPS 16
-#define E0_MICROSTEPS 16
+#define E0_MICROSTEPS 8
 #define E1_MICROSTEPS 16
 #define E2_MICROSTEPS 16
 #define E3_MICROSTEPS 16
@@ -1010,7 +1010,7 @@
 {
 "processor": 0,
 "serial": 0,
-"baudrates": 250000,
+"baudrates": 115200,
 "serial2": -2,
 "baudrates2": 115200,
 "blockbuffersize": 16,
@@ -1031,17 +1031,17 @@
 "hostkeepalivesecond": 2,
 "motherboards": "BOARD_RAMPS_13_HFB",
 "mechanism": 0,
-"power": "1",
+"power": 0,
 "defaultpower": "0",
 "delayafterpower": 5,
 "powertimeout": 30,
 "extruders": 1,
 "driverextruders": 1,
 "tempunitsupport": "0",
-"bed": "0",
+"bed": "1",
 "chamber": "0",
 "cooler": "0",
-"nbed": 0,
+"nbed": 1,
 "nchamber": 0,
 "dhtsupport": "0",
 "dhttype": 11,
@@ -1067,7 +1067,7 @@
 "ad595offset": 0,
 "ad595gain": 1,
 "dummy998": 25,
-"dummy999": 100,
+"dummy999": 25,
 "maxtemp0": 275,
 "maxtemp1": 275,
 "maxtemp2": 275,
@@ -1102,7 +1102,7 @@
 "preheat3bedtemp": 60,
 "preheat3chambertemp": 50,
 "preheat3fanspeed": 255,
-"autotemp": "0",
+"autotemp": "1",
 "autotempoldweight": 0.98,
 "pidtemp": "1",
 "pidmax": 255,
@@ -1114,21 +1114,21 @@
 "lpqmaxlen": 50,
 "temphysteresis": 2,
 "tempinterval": 100,
-"pidkp0": 14.75,
-"pidki0": 0.95,
-"pidkd0": 57.27,
+"pidkp0": 40,
+"pidki0": 7,
+"pidkd0": 60,
 "pidkc0": 100,
-"pidkp1": 41.51,
-"pidki1": 7.28,
-"pidkd1": 59.17,
+"pidkp1": 40,
+"pidki1": 7,
+"pidkd1": 60,
 "pidkc1": 100,
-"pidkp2": 41.51,
-"pidki2": 7.28,
-"pidkd2": 59.17,
+"pidkp2": 40,
+"pidki2": 7,
+"pidkd2": 60,
 "pidkc2": 100,
-"pidkp3": 41.51,
-"pidki3": 7.28,
-"pidkd3": 59.17,
+"pidkp3": 40,
+"pidki3": 7,
+"pidkd3": 60,
 "pidkc3": 100,
 "pidkp4": 40,
 "pidki4": 7,
@@ -1164,7 +1164,7 @@
 "chamberinterval": 500,
 "pidchamberkp": 10,
 "pidchamberki": 1,
-"pidchamberkd": 300,
+"pidchamberkd": 305,
 "pidchamberkp1": 10,
 "pidchamberki1": 1,
 "pidchamberkd1": 300,
@@ -1202,7 +1202,7 @@
 "watchchambertempincrease": 2,
 "watchcoolertempperiod": 60,
 "watchcoolertempincrease": 2,
-"uiprintername": "Prusa I3 R2",
+"uiprintername": "Generic",
 "endstopinterrupt": "0",
 "Xminendstop": "0",
 "Xmaxendstop": "0",
@@ -1223,16 +1223,16 @@
 "Yhoming": 0,
 "Zhoming": 0,
 "Ehoming": 0,
-"disableX": 0,
-"disableY": 0,
-"disableZ": 0,
-"disableE": 0,
-"Xmaxpos": 240,
-"Xminpos": -10,
-"Ymaxpos": 270,
-"Yminpos": -58,
-"Zmaxpos": 240,
-"Zminpos": 0,
+"disableX": "1",
+"disableY": "1",
+"disableZ": "1",
+"disableE": "1",
+"Xmaxpos": 190,
+"Xminpos": -20,
+"Ymaxpos": 170,
+"Yminpos": 0,
+"Zmaxpos": 260,
+"Zminpos": -0.2,
 "Zsafehoming": "0",
 "ZsafehomingX": 100,
 "ZsafehomingY": 100,
@@ -1243,8 +1243,8 @@
 "Yprobeoffset": 0,
 "Zprobeoffset": -1,
 "xyprobespeed": 8000,
-"zprobespeedfast": 1000,
-"zprobespeedslow": 500,
+"zprobespeedfast": 200,
+"zprobespeedslow": 100,
 "zprobingrepeat": "0",
 "Zproberepetitions": 1,
 "Zraiseprobedeploystow": 15,
@@ -1268,27 +1268,27 @@
 "Zhomepos": 0,
 "Xstepspermm": 80,
 "Ystepspermm": 80,
-"Zstepspermm": 3200,
-"Xmaxspeed": 1000,
-"Ymaxspeed": 1000,
-"Zmaxspeed": 3,
+"Zstepspermm": 4000,
+"Xmaxspeed": 300,
+"Ymaxspeed": 300,
+"Zmaxspeed": 2,
 "Xmanualspeed": 100,
 "Ymanualspeed": 100,
 "Zmanualspeed": 2,
 "minimumspeed": 0,
 "minimumtravelspeed": 0,
 "minimumplannerspeed": 0.05,
-"Xmaxacceleration": 5000,
-"Ymaxacceleration": 5000,
+"Xmaxacceleration": 3000,
+"Ymaxacceleration": 3000,
 "Zmaxacceleration": 50,
-"defaultacceleration": 1000,
-"defaulttravelacceleration": 1000,
+"defaultacceleration": 3000,
+"defaulttravelacceleration": 3000,
 "maxXjerk": 10,
 "maxYjerk": 10,
 "maxZjerk": 0.4,
 "Xhomingspeed": 100,
 "Yhomingspeed": 100,
-"Zhomingspeed": 3,
+"Zhomingspeed": 2,
 "XbumpMM": 5,
 "YbumpMM": 5,
 "ZbumpMM": 2,
@@ -1309,7 +1309,7 @@
 "hysteresisYmm": 0,
 "hysteresisZmm": 0,
 "hysteresiscorrection": 1,
-"E0stepspermm": 620,
+"E0stepspermm": 625,
 "E1stepspermm": 625,
 "E2stepspermm": 625,
 "E3stepspermm": 625,
@@ -1321,36 +1321,36 @@
 "E9stepspermm": 625,
 "E10stepspermm": 625,
 "E11stepspermm": 625,
-"E0maxspeed": 50,
+"E0maxspeed": 100,
 "E1maxspeed": 100,
 "E2maxspeed": 100,
 "E3maxspeed": 100,
-"E4maxspeed": 50,
-"E5maxspeed": 50,
+"E4maxspeed": 100,
+"E5maxspeed": 100,
 "E6maxspeed": 50,
 "E7maxspeed": 50,
 "E8maxspeed": 50,
 "E9maxspeed": 50,
 "E10maxspeed": 50,
 "E11maxspeed": 50,
-"E0maxacceleration": 5000,
+"E0maxacceleration": 3000,
 "E1maxacceleration": 3000,
 "E2maxacceleration": 3000,
 "E3maxacceleration": 3000,
-"E4maxacceleration": 1000,
-"E5maxacceleration": 1000,
+"E4maxacceleration": 3000,
+"E5maxacceleration": 3000,
 "E6maxacceleration": 1000,
 "E7maxacceleration": 1000,
 "E8maxacceleration": 1000,
 "E9maxacceleration": 1000,
 "E10maxacceleration": 1000,
 "E11maxacceleration": 1000,
-"E0retractacceleration": 5000,
-"E1retractacceleration": 5000,
-"E2retractacceleration": 5000,
-"E3retractacceleration": 5000,
-"E4retractacceleration": 5000,
-"E5retractacceleration": 5000,
+"E0retractacceleration": 10000,
+"E1retractacceleration": 10000,
+"E2retractacceleration": 10000,
+"E3retractacceleration": 10000,
+"E4retractacceleration": 10000,
+"E5retractacceleration": 10000,
 "E6retractacceleration": 5000,
 "E7retractacceleration": 5000,
 "E8retractacceleration": 5000,
@@ -1392,13 +1392,13 @@
 "towerBdiagonalrod": 0,
 "towerCdiagonalrod": 0,
 "deltaautoprecision": 0.1,
-"deltaautogrid": 20,
+"deltaautogrid": 7,
 "deltaXdeploystart": 0,
 "deltaYdeploystart": 0,
 "deltaZdeploystart": 30,
 "deltaXdeployend": 0,
 "deltaYdeployend": 0,
-"deltaZdeployend": 0,
+"deltaZdeployend": 30,
 "deltaXretractstart": 0,
 "deltaYretractstart": 0,
 "deltaZretractstart": 30,
@@ -1408,17 +1408,17 @@
 "deltaautocalibration": 0,
 "deltahomesafezone": "1",
 "deltahomeonpower": "0",
-"lcdlanguages": "en",
+"lcdlanguages": "it",
 "lcdlanguages1": "NO_LANGUAGE",
 "lcdlanguages2": "NO_LANGUAGE",
 "lcdlanguages3": "NO_LANGUAGE",
 "lcdlanguages4": "NO_LANGUAGE",
-"displays": 4,
+"displays": 5,
 "encoderpulsesstep": 5,
 "encoderstepmenu": 1,
 "invertclickbutton": "0",
 "invertbackbutton": "0",
-"invertrotaryswitch": 0,
+"invertrotaryswitch": "1",
 "invertmenudirection": "0",
 "lcdspeaker": "0",
 "nextion_model": 8,
@@ -1429,7 +1429,7 @@
 "lcdprogressbarbartime": 3,
 "lcdprogressbarmsgtime": 1,
 "lcdprogressbarmsgexpire": 0,
-"doublequadstepping": "1",
+"doublequadstepping": "0",
 "junctiondeviation": "0",
 "junctiondeviationfactor": 0.02,
 "bezierjerk": "0",
@@ -1455,7 +1455,7 @@
 "Xmicrostep": 16,
 "Ymicrostep": 16,
 "Zmicrostep": 16,
-"E0microstep": 16,
+"E0microstep": 8,
 "E1microstep": 16,
 "E2microstep": 16,
 "E3microstep": 16,
@@ -1537,9 +1537,9 @@
 "virtualtools": 16,
 "mkr4": "0",
 "invertrelepin": "0",
-"E0E1pin": 5,
-"E0E2pin": 5,
-"E1E3pin": 6,
+"E0E1pin": -1,
+"E0E2pin": -1,
+"E1E3pin": -1,
 "mkr6": "0",
 "mkr12": "0",
 "EX1pin": -1,
@@ -1561,13 +1561,13 @@
 "abortendstophit": "0",
 "servos": "0",
 "numservos": 0,
-"Zservo": "0",
-"angleextendservosZ": 90,
+"Zservo": -1,
+"angleextendservosZ": 0,
 "angleretractservosZ": 0,
 "servodeactivate": "0",
 "servodeactivatedelay": 300,
 "quickhome": "0",
-"homeYbeforeX": "0",
+"homeYbeforeX": "1",
 "homeXYbeforeZ": "0",
 "babystepping": "0",
 "babysteppingXY": "0",
@@ -1668,16 +1668,16 @@
   "enable": "ORIG_X_ENABLE_PIN"
 },
 "Ymotor": {
-  "name": "Y Driver",
-  "step": "ORIG_Y_STEP_PIN",
-  "dir": "ORIG_Y_DIR_PIN",
-  "enable": "ORIG_Y_ENABLE_PIN"
-},
-"Zmotor": {
   "name": "Z Driver",
   "step": "ORIG_Z_STEP_PIN",
   "dir": "ORIG_Z_DIR_PIN",
   "enable": "ORIG_Z_ENABLE_PIN"
+},
+"Zmotor": {
+  "name": "Y Driver",
+  "step": "ORIG_Y_STEP_PIN",
+  "dir": "ORIG_Y_DIR_PIN",
+  "enable": "ORIG_Y_ENABLE_PIN"
 },
 "X2motor": {
   "name": "E1 Driver",
@@ -1771,9 +1771,9 @@
 "tempcoolerpin": "NoPin",
 "Xminpin": "ORIG_X_MIN_PIN",
 "Xmaxpin": "ORIG_X_MAX_PIN",
-"Yminpin": "ORIG_Y_MIN_PIN",
+"Yminpin": "ORIG_Z_MIN_PIN",
 "Ymaxpin": "ORIG_Y_MAX_PIN",
-"Zminpin": "ORIG_Z_MIN_PIN",
+"Zminpin": "ORIG_Y_MIN_PIN",
 "Zmaxpin": "ORIG_Z_MAX_PIN",
 "X2minpin": "NoPin",
 "X2maxpin": "NoPin",
@@ -1784,19 +1784,19 @@
 "Z2maxpin": "NoPin",
 "Z3maxpin": "NoPin",
 "Zprobepin": "NoPin",
-"Xcspin": "ORIG_X_CS_PIN",
-"Ycspin": "ORIG_Y_CS_PIN",
-"Zcspin": "ORIG_Z_CS_PIN",
-"X2cspin": "ORIG_E1_CS_PIN",
-"Y2cspin": "ORIG_E1_CS_PIN",
-"Z2cspin": "ORIG_E1_CS_PIN",
+"Xcspin": "NoPin",
+"Ycspin": "NoPin",
+"Zcspin": "NoPin",
+"X2cspin": "NoPin",
+"Y2cspin": "NoPin",
+"Z2cspin": "NoPin",
 "Z3cspin": "ORIG_E2_CS_PIN",
-"E0cspin": "ORIG_E0_CS_PIN",
-"E1cspin": "ORIG_E1_CS_PIN",
-"E2cspin": "ORIG_E2_CS_PIN",
-"E3cspin": "ORIG_E3_CS_PIN",
-"E4cspin": "ORIG_E4_CS_PIN",
-"E5cspin": "ORIG_E5_CS_PIN",
+"E0cspin": "NoPin",
+"E1cspin": "NoPin",
+"E2cspin": "NoPin",
+"E3cspin": "NoPin",
+"E4cspin": "NoPin",
+"E5cspin": "NoPin",
 "fanpin": "ORIG_FAN0_PIN",
 "fan1pin": "ORIG_FAN1_PIN",
 "fan2pin": "ORIG_FAN2_PIN",
@@ -1813,7 +1813,7 @@
 "filrunoutpin3": "NoPin",
 "filrunoutpin4": "NoPin",
 "filrunoutpin5": "NoPin",
-"laserpwrpin": 42,
+"laserpwrpin": "ORIG_LASER_PWR_PIN",
 "laserpwmpin": "ORIG_LASER_PWM_PIN",
 "laserperipheralspin": "NoPin",
 "laserperipheralsstatuspin": "NoPin",
@@ -1835,13 +1835,28 @@
 "tacho4pin": "NoPin",
 "tacho5pin": "NoPin",
 "END_DATA": 0,
-"printer": "prusa_i3_r2",
-"drivesystems": 0,
-"npr2": "0",
-"lengthyextrude": "1",
-"autobed": "0",
-"gridmode": "1",
-"gridpoint": 2,
+"printer": "prusa_i3_r2_evo",
+"plahotendtemp": 190,
+"plabedtemp": 60,
+"plafanspeed": 255,
+"abshotendtemp": 240,
+"absbedtemp": 100,
+"absfanspeed": 255,
+"gumhotendtemp": 230,
+"gumbedtemp": 60,
+"gumfanspeed": 255,
+"heaterpwmspeed": 0,
+"maxbedpower": 255,
+"maxchamberpower": 255,
+"fastpwmcooler": "0",
+"maxcoolerpower": 255,
+"thermalprotectionbedperiod": 20,
+"thermalprotectionbedhysteresis": 2,
+"thermalprotectionchamberperiod": 20,
+"thermalprotectionchamberhysteresis": 2,
+"thermalprotectioncoolerperiod": 20,
+"thermalprotectioncoolerhysteresis": 2,
+"zprobespeed": 3600,
 "leftprobe": 20,
 "rightprobe": 180,
 "backprobe": 180,
@@ -1852,57 +1867,29 @@
 "Yprobe2": 15,
 "Xprobe3": 180,
 "Yprobe3": 15,
-"Zraisebeforehoming": 10,
-"Zraisebeforeprobe": 10,
-"maxXYjerk": 15,
-"maxEjerk": 5,
-"defaultaccelleration": 2000,
-"defaultretractionaccelleration": 4000,
-"deltaXprobeoffset": 0,
-"deltaYprobeoffset": 0,
-"deltaZprobeoffset": -10,
-"E0retractionspeed": 100,
-"E1retractionspeed": 150,
-"E2retractionspeed": 150,
-"E3retractionspeed": 150,
-"Xinvert": 0,
-"Yinvert": "1",
-"Zinvert": 0,
-"E0invert": "1",
-"E1invert": 0,
-"E2invert": 0,
-"E3invert": 0,
-"E0coolerpin": -1,
-"E1coolerpin": -1,
-"E2coolerpin": -1,
-"E3coolerpin": -1,
-"laserttlpin": 44,
-"filamentswitch": "0",
-"pausepin": 19,
-"Xservo": "-1",
-"Yservo": "-1",
-"angleextendservosX": 0,
-"angleretractservosX": 0,
-"angleextendservosY": 0,
-"angleretractservosY": 0,
-"uilanguages": 7,
-"easyload": 0,
-"bowdenlenght": 250,
-"lcdpurgelenght": 10,
-"lcdretractlenght": 5,
-"lcdpurgefeedrate": 3,
-"lcdretractfeedrate": 5,
-"lcdloadfeedrate": 20,
-"lcdunloadfeedrate": 20,
-"plahotendtemp": 200,
-"plabedtemp": 20,
-"plafanspeed": 255,
-"abshotendtemp": 250,
-"absbedtemp": 90,
-"absfanspeed": 0,
-"gumhotendtemp": 230,
-"gumbedtemp": 60,
-"gumfanspeed": 255
+"disableddoublequadstepping": "0",
+"X2microstep": 16,
+"Y2microstep": 16,
+"Z2microstep": 16,
+"X2current": 800,
+"Y2current": 800,
+"Z2current": 800,
+"fanpwmspeed": 0,
+"abortendstophitinit": "1",
+"filamentrunoutpininverting": "0",
+"filamentrunoutpullup": "1",
+"sdslow": "0",
+"sdextraslow": "0",
+"sdsetting": "0",
+"sdsettingtime": 300,
+"E0encoderpin": "NoPin",
+"E1encoderpin": "NoPin",
+"E2encoderpin": "NoPin",
+"E3encoderpin": "NoPin",
+"E4encoderpin": "NoPin",
+"E5encoderpin": "NoPin",
+"flowmeterpin": "NoPin",
+"filrunoutpin": "NoPin"
 }
 ========== End configuration string ==========
 */

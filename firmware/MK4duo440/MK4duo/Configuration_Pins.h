@@ -34,42 +34,42 @@
 #define X_STEP_PIN           ORIG_X_STEP_PIN
 #define X_DIR_PIN            ORIG_X_DIR_PIN
 #define X_ENABLE_PIN         ORIG_X_ENABLE_PIN
-#define X_CS_PIN             ORIG_X_CS_PIN
+#define X_CS_PIN             NoPin
 
 // X2 axis pins
 #if ENABLED(DUAL_X_CARRIAGE) || ENABLED(X_TWO_STEPPER_DRIVERS)
   #define X2_STEP_PIN        ORIG_E1_STEP_PIN
   #define X2_DIR_PIN         ORIG_E1_DIR_PIN
   #define X2_ENABLE_PIN      ORIG_E1_ENABLE_PIN
-  #define X2_CS_PIN          ORIG_E1_CS_PIN
+  #define X2_CS_PIN          NoPin
 #endif
 
 // Y axis pins
-#define Y_STEP_PIN           ORIG_Y_STEP_PIN
-#define Y_DIR_PIN            ORIG_Y_DIR_PIN
-#define Y_ENABLE_PIN         ORIG_Y_ENABLE_PIN
-#define Y_CS_PIN             ORIG_Y_CS_PIN
+#define Y_STEP_PIN           ORIG_Z_STEP_PIN
+#define Y_DIR_PIN            ORIG_Z_DIR_PIN
+#define Y_ENABLE_PIN         ORIG_Z_ENABLE_PIN
+#define Y_CS_PIN             NoPin
 
 // Y2 axis pins
 #if ENABLED(Y_TWO_STEPPER_DRIVERS)
   #define Y2_STEP_PIN        ORIG_E1_STEP_PIN
   #define Y2_DIR_PIN         ORIG_E1_DIR_PIN
   #define Y2_ENABLE_PIN      ORIG_E1_ENABLE_PIN
-  #define Y2_CS_PIN          ORIG_E1_CS_PIN
+  #define Y2_CS_PIN          NoPin
 #endif
 
 // Z axis pins
-#define Z_STEP_PIN           ORIG_Z_STEP_PIN
-#define Z_DIR_PIN            ORIG_Z_DIR_PIN
-#define Z_ENABLE_PIN         ORIG_Z_ENABLE_PIN
-#define Z_CS_PIN             ORIG_Z_CS_PIN
+#define Z_STEP_PIN           ORIG_Y_STEP_PIN
+#define Z_DIR_PIN            ORIG_Y_DIR_PIN
+#define Z_ENABLE_PIN         ORIG_Y_ENABLE_PIN
+#define Z_CS_PIN             NoPin
 
 // Z2 axis pins
 #if (ENABLED(Z_TWO_STEPPER_DRIVERS) || ENABLED(Z_THREE_STEPPER_DRIVERS))
   #define Z2_STEP_PIN        ORIG_E1_STEP_PIN
   #define Z2_DIR_PIN         ORIG_E1_DIR_PIN
   #define Z2_ENABLE_PIN      ORIG_E1_ENABLE_PIN
-  #define Z2_CS_PIN          ORIG_E1_CS_PIN
+  #define Z2_CS_PIN          NoPin
 #endif
 
 // Z3 axis pins
@@ -84,50 +84,50 @@
 #define E0_STEP_PIN          ORIG_E0_STEP_PIN
 #define E0_DIR_PIN           ORIG_E0_DIR_PIN
 #define E0_ENABLE_PIN        ORIG_E0_ENABLE_PIN
-#define E0_CS_PIN            ORIG_E0_CS_PIN
+#define E0_CS_PIN            NoPin
 #define SOL0_PIN             ORIG_SOL0_PIN
 
 // E1 axis pins
 #define E1_STEP_PIN          ORIG_E1_STEP_PIN
 #define E1_DIR_PIN           ORIG_E1_DIR_PIN
 #define E1_ENABLE_PIN        ORIG_E1_ENABLE_PIN
-#define E1_CS_PIN            ORIG_E1_CS_PIN
+#define E1_CS_PIN            NoPin
 #define SOL1_PIN             ORIG_SOL1_PIN
 
 // E2 axis pins
 #define E2_STEP_PIN          ORIG_E2_STEP_PIN
 #define E2_DIR_PIN           ORIG_E2_DIR_PIN
 #define E2_ENABLE_PIN        ORIG_E2_ENABLE_PIN
-#define E2_CS_PIN            ORIG_E2_CS_PIN
+#define E2_CS_PIN            NoPin
 #define SOL2_PIN             ORIG_SOL2_PIN
 
 // E3 axis pins
 #define E3_STEP_PIN          ORIG_E3_STEP_PIN
 #define E3_DIR_PIN           ORIG_E3_DIR_PIN
 #define E3_ENABLE_PIN        ORIG_E3_ENABLE_PIN
-#define E3_CS_PIN            ORIG_E3_CS_PIN
+#define E3_CS_PIN            NoPin
 #define SOL3_PIN             ORIG_SOL3_PIN
 
 // E4 axis pins
 #define E4_STEP_PIN          ORIG_E4_STEP_PIN
 #define E4_DIR_PIN           ORIG_E4_DIR_PIN
 #define E4_ENABLE_PIN        ORIG_E4_ENABLE_PIN
-#define E4_CS_PIN            ORIG_E4_CS_PIN
+#define E4_CS_PIN            NoPin
 #define SOL4_PIN             ORIG_SOL4_PIN
 
 // E5 axis pins
 #define E5_STEP_PIN          ORIG_E5_STEP_PIN
 #define E5_DIR_PIN           ORIG_E5_DIR_PIN
 #define E5_ENABLE_PIN        ORIG_E5_ENABLE_PIN
-#define E5_CS_PIN            ORIG_E5_CS_PIN
+#define E5_CS_PIN            NoPin
 #define SOL5_PIN             ORIG_SOL5_PIN
 
 // ENDSTOP pins
 #define X_MIN_PIN            ORIG_X_MIN_PIN
 #define X_MAX_PIN            ORIG_X_MAX_PIN
-#define Y_MIN_PIN            ORIG_Y_MIN_PIN
+#define Y_MIN_PIN            ORIG_Z_MIN_PIN
 #define Y_MAX_PIN            ORIG_Y_MAX_PIN
-#define Z_MIN_PIN            ORIG_Z_MIN_PIN
+#define Z_MIN_PIN            ORIG_Y_MIN_PIN
 #define Z_MAX_PIN            ORIG_Z_MAX_PIN
 #define X2_MIN_PIN           NoPin
 #define Y2_MIN_PIN           NoPin
@@ -201,9 +201,9 @@
 #endif
 
 #if ENABLED(MKR4)
-  #define E0E1_CHOICE_PIN    5
-  #define E0E2_CHOICE_PIN    5
-  #define E1E3_CHOICE_PIN    6
+  #define E0E1_CHOICE_PIN    -1
+  #define E0E2_CHOICE_PIN    -1
+  #define E1E3_CHOICE_PIN    -1
 #elif ENABLED(MKR6) || ENABLED(MKR12)
   #define EX1_CHOICE_PIN     -1
   #define EX2_CHOICE_PIN     -1
@@ -214,7 +214,7 @@
 #endif
 
 #if ENABLED(LASER)
-  #define LASER_PWR_PIN                   42
+  #define LASER_PWR_PIN                   ORIG_LASER_PWR_PIN
   #define LASER_PWM_PIN                   ORIG_LASER_PWM_PIN
   #if ENABLED(LASER_PERIPHERALS)
     #define LASER_PERIPHERALS_PIN         NoPin
@@ -241,7 +241,7 @@
 #endif
 
 #if ENABLED(FLOWMETER_SENSOR)
-  #define FLOWMETER_PIN      
+  #define FLOWMETER_PIN      NoPin
 #endif
 
 #if ENABLED(POWER_CONSUMPTION)
