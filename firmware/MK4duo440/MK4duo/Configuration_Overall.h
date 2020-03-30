@@ -46,7 +46,7 @@
 //#define SERIAL_XON_XOFF
 //#define SERIAL_STATS_MAX_RX_QUEUED
 //#define SERIAL_STATS_DROPPED_RX
-#define STRING_CONFIG_AUTHOR "(none, default config)"
+#define STRING_CONFIG_AUTHOR "(cinna, 3Dw 2.0.0)"
 #define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
 #define KILL_METHOD 0
 #define NO_TIMEOUTS 1000
@@ -337,8 +337,8 @@
 //#define MANUAL_X_HOME_POS 0
 //#define MANUAL_Y_HOME_POS 0
 //#define MANUAL_Z_HOME_POS 0
-#define DEFAULT_AXIS_STEPS_PER_UNIT {80,80,4000}
-#define DEFAULT_AXIS_STEPS_PER_UNIT_E {625,625,625,625,625,625,625,625,625,625,625,625}
+#define DEFAULT_AXIS_STEPS_PER_UNIT {80,80,1065}
+#define DEFAULT_AXIS_STEPS_PER_UNIT_E {95,625,625,625,625,625,625,625,625,625,625,625}
 #define DEFAULT_MAX_FEEDRATE {300,300,2}
 #define DEFAULT_MAX_FEEDRATE_E {100,100,100,100,100,100,50,50,50,50,50,50}
 #define MANUAL_FEEDRATE {100,100,2,10}
@@ -800,7 +800,7 @@
 #define X_MICROSTEPS 16
 #define Y_MICROSTEPS 16
 #define Z_MICROSTEPS 16
-#define E0_MICROSTEPS 8
+#define E0_MICROSTEPS 16
 #define E1_MICROSTEPS 16
 #define E2_MICROSTEPS 16
 #define E3_MICROSTEPS 16
@@ -1018,8 +1018,8 @@
 "txbuffersize": 0,
 "rxbuffersize": 128,
 "serialxonxoff": "0",
-"customname": "none",
-"customconfig": "default config",
+"customname": "cinna",
+"customconfig": "3Dw 2.0.0",
 "machineuuid": "00000000-0000-0000-0000-000000000000",
 "killMethod": 0,
 "notimeouts": 1000,
@@ -1268,7 +1268,7 @@
 "Zhomepos": 0,
 "Xstepspermm": 80,
 "Ystepspermm": 80,
-"Zstepspermm": 4000,
+"Zstepspermm": 1065,
 "Xmaxspeed": 300,
 "Ymaxspeed": 300,
 "Zmaxspeed": 2,
@@ -1309,7 +1309,7 @@
 "hysteresisYmm": 0,
 "hysteresisZmm": 0,
 "hysteresiscorrection": 1,
-"E0stepspermm": 625,
+"E0stepspermm": 95,
 "E1stepspermm": 625,
 "E2stepspermm": 625,
 "E3stepspermm": 625,
@@ -1455,7 +1455,7 @@
 "Xmicrostep": 16,
 "Ymicrostep": 16,
 "Zmicrostep": 16,
-"E0microstep": 8,
+"E0microstep": 16,
 "E1microstep": 16,
 "E2microstep": 16,
 "E3microstep": 16,
