@@ -8,6 +8,9 @@ This is the original firmware version, used without the hot bed.
 
 Trying to activate hot bed causes prolems: port 8 remains always down. Till now no solution.
 
+### MK4duo 4.4.0
+This new version add more feature and resolve the hot bed problem of the MarlinKimbraR2 firmware.
+
 ## Versions
 ### v 0.0.0
 Firmware initial version
@@ -66,3 +69,21 @@ The wire end sensor has been disabled to allow SD card operation
 
 ### v 1.2.0
 Renamed firmware to MarlinKimbraR2
+
+### v 2.0.0
+Added new version based on MK4duo 4.4.0 using the Prusa I3 R2 with A4988 (by NicolaP)
+
+Changed serial connection configuration
+
+Mapped Y axis stepper driver and Y min endstop pin to Z driver. Y axis have 2 motor and on the board there're 2 parallel driver for Z axis
+
+Mapped Z axis stepper driver and Z min endstop pin to Y driver. Y axis have 2 motor and on the board there're 2 parallel driver for Z axis.
+
+Calibrated max and min x, y, z axis limits
+
+Changed home axis order, y before x
+
+Configured LCD panel
+
+Enabled hot bed
+
