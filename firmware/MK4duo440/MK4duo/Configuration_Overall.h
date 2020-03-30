@@ -207,7 +207,7 @@
  * Configuration_Cartesian *
  ***************************/
 #define KNOWN_MECH
-#define CUSTOM_MACHINE_NAME "Generic"
+#define CUSTOM_MACHINE_NAME "3Dw 2.0.0"
 #define ENDSTOPPULLUP_XMIN true
 #define ENDSTOPPULLUP_YMIN true
 #define ENDSTOPPULLUP_ZMIN true
@@ -304,7 +304,7 @@
 #define Y_MAX_POS 170
 #define Y_MIN_POS 0
 #define Z_MAX_POS 260
-#define Z_MIN_POS -0.2
+#define Z_MIN_POS -1.2
 #define E_MIN_POS 0
 #define AXIS_RELATIVE_MODES {false, false, false, false}
 //#define Z_SAFE_HOMING
@@ -1202,7 +1202,7 @@
 "watchchambertempincrease": 2,
 "watchcoolertempperiod": 60,
 "watchcoolertempincrease": 2,
-"uiprintername": "Generic",
+"uiprintername": "3Dw 2.0.0",
 "endstopinterrupt": "0",
 "Xminendstop": "0",
 "Xmaxendstop": "0",
@@ -1232,7 +1232,7 @@
 "Ymaxpos": 170,
 "Yminpos": 0,
 "Zmaxpos": 260,
-"Zminpos": -0.2,
+"Zminpos": -1.2,
 "Zsafehoming": "0",
 "ZsafehomingX": 100,
 "ZsafehomingY": 100,
