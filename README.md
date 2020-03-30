@@ -33,11 +33,11 @@ Exchanged Y and Z axes in order to use the double connector provided for the Z w
 Right Y motor reversed by swapping black / green wires
 
 Configured X and Y axis motor steps:
-. motor step angle = 1.8 °
-. microstepping driver = 1/16
-. belt pitch = GT2 Belt (2mm)
-. num. teeth = 20
-  . step value for mm = 80
+- motor step angle = 1.8 °
+- microstepping driver = 1/16
+- belt pitch = GT2 Belt (2mm)
+- num. teeth = 20
+  - step value for mm = 80
 
 Z-axis motor steps configured:
 . motor step angle = 1.8 °
