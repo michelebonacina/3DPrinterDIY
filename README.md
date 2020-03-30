@@ -8,6 +8,9 @@ This is the original firmware version, used without the hot bed.
 
 Trying to activate hot bed causes prolems: port 8 remains always down. Till now no solution.
 
+### MK4duo 4.4.0
+This new version add more feature and resolve the hot bed problem of the MarlinKimbraR2 firmware.
+
 ## Versions
 ### v 0.0.0
 Firmware initial version
@@ -66,3 +69,7 @@ The wire end sensor has been disabled to allow SD card operation
 
 ### v 1.2.0
 Renamed firmware to MarlinKimbraR2
+
+### v 2.0.0
+Added new version based on MK4duo 4.4.0 using the Prusa I3 R2 with A4988 (by NicolaP)
+
