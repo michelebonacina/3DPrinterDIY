@@ -1,0 +1,10 @@
+[filament]
+name = filament-pla-3dw
+diameter = 1.75
+multiplierPercent = 95
+printingTemperature = 210
+enableCooling = True
+bedTemperature = 50
+fanSpeedMin = 100
+fanSpeedMax = 100
+minimalLayerTime = 5
