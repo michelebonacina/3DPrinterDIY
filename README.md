@@ -16,4 +16,4 @@ Fully configured using [official online configurator](https://marlinkimbra.it/co
 
 *ATTENTION* Download SdFat library by Bill Greiman 1.1.1 or higher
 
-[Versions](./details.md/versions.md)
+##[Versions](./details.md/versions.md)
