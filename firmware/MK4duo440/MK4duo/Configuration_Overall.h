@@ -207,7 +207,7 @@
  * Configuration_Cartesian *
  ***************************/
 #define KNOWN_MECH
-#define CUSTOM_MACHINE_NAME "3Dw 2.0.0"
+#define CUSTOM_MACHINE_NAME "3Dw 2.1.0"
 #define ENDSTOPPULLUP_XMIN true
 #define ENDSTOPPULLUP_YMIN true
 #define ENDSTOPPULLUP_ZMIN true
@@ -527,7 +527,7 @@
 //#define INVERTED_FAN_PINS
 #define FAN_PWM_FREQUENCY 250
 //#define FAN_KICKSTART_TIME 0
-#define AUTO_FAN {-1,0,-1,-1,-1,-1}
+#define AUTO_FAN {0,-1,-1,-1,-1,-1}
 #define HOTEND_AUTO_FAN_TEMPERATURE 50
 #define HOTEND_AUTO_FAN_SPEED 255
 #define HOTEND_AUTO_FAN_MIN_SPEED 0
@@ -1202,7 +1202,7 @@
 "watchchambertempincrease": 2,
 "watchcoolertempperiod": 60,
 "watchcoolertempincrease": 2,
-"uiprintername": "3Dw 2.0.0",
+"uiprintername": "3Dw 2.1.0",
 "endstopinterrupt": "0",
 "Xminendstop": "0",
 "Xmaxendstop": "0",
@@ -1505,8 +1505,8 @@
 "fanmaxpwm": 255,
 "fanpwmfreq": 250,
 "fankickstarttime": 0,
-"autofan0": -1,
-"autofan1": 0,
+"autofan0": 0,
+"autofan1": -1,
 "autofan2": -1,
 "autofan3": -1,
 "autofan4": -1,

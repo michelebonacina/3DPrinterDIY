@@ -3,15 +3,21 @@ Self made 3D Printer Project
 
 
 ## Firmware
-### MarlinKimbraR2
+
+### MarlinKimbraR2 - version 1.x.y
 This is the original firmware version, used without the hot bed.
 
 Trying to activate hot bed causes prolems: port 8 remains always down. Till now no solution.
 
-### MK4duo 4.4.0
+### MK4duo 4.4.0 - version 2.x.y
 This new version add more feature and resolve the hot bed problem of the MarlinKimbraR2 firmware.
 
+Fully configured using [official online configurator](https://marlinkimbra.it/configurator/v4_4_0/firmware_configurator.php)
+
+*ATTENTION* Download SdFat library by Bill Greiman 1.1.1 or higher
+
 ## Versions
+
 ### v 0.0.0
 Firmware initial version
 
@@ -27,25 +33,25 @@ Exchanged Y and Z axes in order to use the double connector provided for the Z w
 Right Y motor reversed by swapping black / green wires
 
 Configured X and Y axis motor steps:
-. motor step angle = 1.8 °
-. microstepping driver = 1/16
-. belt pitch = GT2 Belt (2mm)
-. num. teeth = 20
-  . step value for mm = 80
+- motor step angle = 1.8 °
+- microstepping driver = 1/16
+- belt pitch = GT2 Belt (2mm)
+- num. teeth = 20
+  - step value for mm = 80
 
 Z-axis motor steps configured:
-. motor step angle = 1.8 °
-. microstepping driver = 1/16
-. thread pitch = M12 (1.75mm per revolution)
-. transmission ratio = 1: 1
-  . step value for mm = 1828.5714 ---> NOT CORRECT
-  . by attempts -> step value for mm = 1065
+- motor step angle = 1.8 °
+- microstepping driver = 1/16
+- thread pitch = M12 (1.75mm per revolution)
+- transmission ratio = 1: 1
+  - step value for mm = 1828.5714 ---> NOT CORRECT
+  - by attempts -> step value for mm = 1065
 
 Extruder motor steps E0 configured:
-. number of steps originally set = 1240
-. extrusion length required = 50mm
-. extruded wire length = 651mm
-  . step to be set = 95.238
+- number of steps originally set = 1240
+- extrusion length required = 50mm
+- extruded wire length = 651mm
+  - step to be set = 95.238
 
 Transfer rate set at 112500 baud for communication with Repetier-Host
 
@@ -92,4 +98,7 @@ Calibrated estruder stepper
 Calibrated z stepper
 
 Enabled SD support
+
+### v 2.1.0
+Enabled hotend auto fan
 
