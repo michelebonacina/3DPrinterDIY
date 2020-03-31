@@ -339,20 +339,20 @@
 //#define MANUAL_Z_HOME_POS 0
 #define DEFAULT_AXIS_STEPS_PER_UNIT {80,80,1065}
 #define DEFAULT_AXIS_STEPS_PER_UNIT_E {95,625,625,625,625,625,625,625,625,625,625,625}
-#define DEFAULT_MAX_FEEDRATE {300,300,2}
+#define DEFAULT_MAX_FEEDRATE {150,150,4}
 #define DEFAULT_MAX_FEEDRATE_E {100,100,100,100,100,100,50,50,50,50,50,50}
 #define MANUAL_FEEDRATE {100,100,2,10}
 #define SHORT_MANUAL_Z_MOVE           0.025
 #define DEFAULT_MIN_FEEDRATE          0.0
 #define DEFAULT_MIN_TRAVEL_FEEDRATE   0.0
 #define MINIMUM_PLANNER_SPEED         0.05                      // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION {3000,3000,50}
+#define DEFAULT_MAX_ACCELERATION {3000,3000,20}
 #define DEFAULT_MAX_ACCELERATION_E {3000,3000,3000,3000,3000,3000,1000,1000,1000,1000,1000,1000}
 #define DEFAULT_RETRACT_ACCELERATION {10000,10000,10000,10000,10000,10000,5000,5000,5000,5000,5000,5000}
-#define DEFAULT_ACCELERATION 3000
-#define DEFAULT_TRAVEL_ACCELERATION 3000
-#define DEFAULT_XJERK 10
-#define DEFAULT_YJERK 10
+#define DEFAULT_ACCELERATION 2000
+#define DEFAULT_TRAVEL_ACCELERATION 1000
+#define DEFAULT_XJERK 15
+#define DEFAULT_YJERK 15
 #define DEFAULT_ZJERK 0.4
 #define DEFAULT_EJERK {5,5,5,5,5,5,5,5,5,5,5,5}
 #define HOMING_FEEDRATE_X (100*60)
@@ -1269,9 +1269,9 @@
 "Xstepspermm": 80,
 "Ystepspermm": 80,
 "Zstepspermm": 1065,
-"Xmaxspeed": 300,
-"Ymaxspeed": 300,
-"Zmaxspeed": 2,
+"Xmaxspeed": 150,
+"Ymaxspeed": 150,
+"Zmaxspeed": 4,
 "Xmanualspeed": 100,
 "Ymanualspeed": 100,
 "Zmanualspeed": 2,
@@ -1280,11 +1280,11 @@
 "minimumplannerspeed": 0.05,
 "Xmaxacceleration": 3000,
 "Ymaxacceleration": 3000,
-"Zmaxacceleration": 50,
-"defaultacceleration": 3000,
-"defaulttravelacceleration": 3000,
-"maxXjerk": 10,
-"maxYjerk": 10,
+"Zmaxacceleration": 20,
+"defaultacceleration": 2000,
+"defaulttravelacceleration": 1000,
+"maxXjerk": 15,
+"maxYjerk": 15,
 "maxZjerk": 0.4,
 "Xhomingspeed": 100,
 "Yhomingspeed": 100,
