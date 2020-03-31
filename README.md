@@ -102,3 +102,6 @@ Enabled SD support
 ### v 2.1.0
 Enabled hotend auto fan
 
+### v 2.2.0
+Tuned hotend PID
+
