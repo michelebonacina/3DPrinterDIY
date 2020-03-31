@@ -147,9 +147,9 @@
 #define PID_AUTOTUNE_MENU // Add PID Autotune to the LCD "Temperature" menu to run M303 and apply the result.
 //#define PID_ADD_EXTRUSION_RATE
 #define LPQ_MAX_LEN 50
-#define HOTEND_Kp {40,40,40,40,40,40}
-#define HOTEND_Ki {7,7,7,7,7,7}
-#define HOTEND_Kd {60,60,60,60,60,60}
+#define HOTEND_Kp {26.32,40,40,40,40,40}
+#define HOTEND_Ki {2.18,7,7,7,7,7}
+#define HOTEND_Kd {79.46,60,60,60,60,60}
 #define HOTEND_Kc {100,100,100,100,100,100}
 #define PIDTEMPBED false
 #define BED_POWER_MAX 255
@@ -1114,9 +1114,9 @@
 "lpqmaxlen": 50,
 "temphysteresis": 2,
 "tempinterval": 100,
-"pidkp0": 40,
-"pidki0": 7,
-"pidkd0": 60,
+"pidkp0": 26.32,
+"pidki0": 2.18,
+"pidkd0": 79.46,
 "pidkc0": 100,
 "pidkp1": 40,
 "pidki1": 7,
