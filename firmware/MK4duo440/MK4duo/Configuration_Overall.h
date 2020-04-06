@@ -46,7 +46,7 @@
 //#define SERIAL_XON_XOFF
 //#define SERIAL_STATS_MAX_RX_QUEUED
 //#define SERIAL_STATS_DROPPED_RX
-#define STRING_CONFIG_AUTHOR "(cinna, 3Dw 2.2.0)"
+#define STRING_CONFIG_AUTHOR "(cinna, 3Dw 2.1.2)"
 #define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
 #define KILL_METHOD 0
 #define NO_TIMEOUTS 1000
@@ -207,7 +207,7 @@
  * Configuration_Cartesian *
  ***************************/
 #define KNOWN_MECH
-#define CUSTOM_MACHINE_NAME "3Dw 2.2.0"
+#define CUSTOM_MACHINE_NAME "3Dw 2.1.2"
 #define ENDSTOPPULLUP_XMIN true
 #define ENDSTOPPULLUP_YMIN true
 #define ENDSTOPPULLUP_ZMIN true
@@ -454,6 +454,9 @@
 //#define GAME_SNAKE
 //#define NO_LCD_MENUS
 //#define SLIM_LCD_MENUS
+//#define ST7920_DELAY_1  DELAY_NS(0)
+//#define ST7920_DELAY_2  DELAY_NS(0)
+//#define ST7920_DELAY_3  DELAY_NS(64)
 #define ENCODER_PULSES_PER_STEP 5
 #define ENCODER_STEPS_PER_MENU_ITEM 1
 //#define LCD_SCREEN_ROT_90    // Rotate screen orientation for graphics display by 90 degree clockwise
@@ -889,7 +892,7 @@
 #define PROPORTIONAL_FONT_RATIO 1
 
 /********************************
- *  Configuration_Motor_Driver  *
+ *     Configuration_Driver     *
  ********************************/
 #define R_SENSE           0.11  // R_sense resistor
 #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
@@ -898,6 +901,7 @@
 #define X_STALL_SENSITIVITY 8
 #define Y_STALL_SENSITIVITY 8
 #define Z_STALL_SENSITIVITY 8
+#define PHASE_HOME { -1, -1, -1 }
 //#define SPI_ENDSTOPS
 //#define IMPROVE_HOMING_RELIABILITY
 //#define SQUARE_WAVE_STEPPING
@@ -1019,7 +1023,7 @@
 "rxbuffersize": 128,
 "serialxonxoff": "0",
 "customname": "cinna",
-"customconfig": "3Dw 2.2.0",
+"customconfig": "3Dw 2.1.2",
 "machineuuid": "00000000-0000-0000-0000-000000000000",
 "killMethod": 0,
 "notimeouts": 1000,
@@ -1202,7 +1206,7 @@
 "watchchambertempincrease": 2,
 "watchcoolertempperiod": 60,
 "watchcoolertempincrease": 2,
-"uiprintername": "3Dw 2.2.0",
+"uiprintername": "3Dw 2.1.2",
 "endstopinterrupt": "0",
 "Xminendstop": "0",
 "Xmaxendstop": "0",
