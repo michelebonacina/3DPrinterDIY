@@ -46,7 +46,7 @@
 //#define SERIAL_XON_XOFF
 //#define SERIAL_STATS_MAX_RX_QUEUED
 //#define SERIAL_STATS_DROPPED_RX
-#define STRING_CONFIG_AUTHOR "(cinna, 3Dw 2.0.0)"
+#define STRING_CONFIG_AUTHOR "(cinna, 3Dw 2.2.0)"
 #define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
 #define KILL_METHOD 0
 #define NO_TIMEOUTS 1000
@@ -147,9 +147,9 @@
 #define PID_AUTOTUNE_MENU // Add PID Autotune to the LCD "Temperature" menu to run M303 and apply the result.
 //#define PID_ADD_EXTRUSION_RATE
 #define LPQ_MAX_LEN 50
-#define HOTEND_Kp {40,40,40,40,40,40}
-#define HOTEND_Ki {7,7,7,7,7,7}
-#define HOTEND_Kd {60,60,60,60,60,60}
+#define HOTEND_Kp {26.32,40,40,40,40,40}
+#define HOTEND_Ki {2.18,7,7,7,7,7}
+#define HOTEND_Kd {79.46,60,60,60,60,60}
 #define HOTEND_Kc {100,100,100,100,100,100}
 #define PIDTEMPBED false
 #define BED_POWER_MAX 255
@@ -207,7 +207,7 @@
  * Configuration_Cartesian *
  ***************************/
 #define KNOWN_MECH
-#define CUSTOM_MACHINE_NAME "3Dw 2.1.0"
+#define CUSTOM_MACHINE_NAME "3Dw 2.2.0"
 #define ENDSTOPPULLUP_XMIN true
 #define ENDSTOPPULLUP_YMIN true
 #define ENDSTOPPULLUP_ZMIN true
@@ -304,7 +304,7 @@
 #define Y_MAX_POS 170
 #define Y_MIN_POS 0
 #define Z_MAX_POS 260
-#define Z_MIN_POS -1.2
+#define Z_MIN_POS -0.8
 #define E_MIN_POS 0
 #define AXIS_RELATIVE_MODES {false, false, false, false}
 //#define Z_SAFE_HOMING
@@ -339,20 +339,20 @@
 //#define MANUAL_Z_HOME_POS 0
 #define DEFAULT_AXIS_STEPS_PER_UNIT {80,80,1065}
 #define DEFAULT_AXIS_STEPS_PER_UNIT_E {95,625,625,625,625,625,625,625,625,625,625,625}
-#define DEFAULT_MAX_FEEDRATE {300,300,2}
-#define DEFAULT_MAX_FEEDRATE_E {100,100,100,100,100,100,50,50,50,50,50,50}
+#define DEFAULT_MAX_FEEDRATE {150,150,4}
+#define DEFAULT_MAX_FEEDRATE_E {50,100,100,100,100,100,50,50,50,50,50,50}
 #define MANUAL_FEEDRATE {100,100,2,10}
 #define SHORT_MANUAL_Z_MOVE           0.025
 #define DEFAULT_MIN_FEEDRATE          0.0
 #define DEFAULT_MIN_TRAVEL_FEEDRATE   0.0
 #define MINIMUM_PLANNER_SPEED         0.05                      // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION {3000,3000,50}
+#define DEFAULT_MAX_ACCELERATION {3000,3000,20}
 #define DEFAULT_MAX_ACCELERATION_E {3000,3000,3000,3000,3000,3000,1000,1000,1000,1000,1000,1000}
-#define DEFAULT_RETRACT_ACCELERATION {10000,10000,10000,10000,10000,10000,5000,5000,5000,5000,5000,5000}
-#define DEFAULT_ACCELERATION 3000
-#define DEFAULT_TRAVEL_ACCELERATION 3000
-#define DEFAULT_XJERK 10
-#define DEFAULT_YJERK 10
+#define DEFAULT_RETRACT_ACCELERATION {4000,10000,10000,10000,10000,10000,5000,5000,5000,5000,5000,5000}
+#define DEFAULT_ACCELERATION 2000
+#define DEFAULT_TRAVEL_ACCELERATION 1000
+#define DEFAULT_XJERK 15
+#define DEFAULT_YJERK 15
 #define DEFAULT_ZJERK 0.4
 #define DEFAULT_EJERK {5,5,5,5,5,5,5,5,5,5,5,5}
 #define HOMING_FEEDRATE_X (100*60)
@@ -1019,7 +1019,7 @@
 "rxbuffersize": 128,
 "serialxonxoff": "0",
 "customname": "cinna",
-"customconfig": "3Dw 2.0.0",
+"customconfig": "3Dw 2.2.0",
 "machineuuid": "00000000-0000-0000-0000-000000000000",
 "killMethod": 0,
 "notimeouts": 1000,
@@ -1114,9 +1114,9 @@
 "lpqmaxlen": 50,
 "temphysteresis": 2,
 "tempinterval": 100,
-"pidkp0": 40,
-"pidki0": 7,
-"pidkd0": 60,
+"pidkp0": 26.32,
+"pidki0": 2.18,
+"pidkd0": 79.46,
 "pidkc0": 100,
 "pidkp1": 40,
 "pidki1": 7,
@@ -1202,7 +1202,7 @@
 "watchchambertempincrease": 2,
 "watchcoolertempperiod": 60,
 "watchcoolertempincrease": 2,
-"uiprintername": "3Dw 2.1.0",
+"uiprintername": "3Dw 2.2.0",
 "endstopinterrupt": "0",
 "Xminendstop": "0",
 "Xmaxendstop": "0",
@@ -1232,7 +1232,7 @@
 "Ymaxpos": 170,
 "Yminpos": 0,
 "Zmaxpos": 260,
-"Zminpos": -1.2,
+"Zminpos": -0.8,
 "Zsafehoming": "0",
 "ZsafehomingX": 100,
 "ZsafehomingY": 100,
@@ -1269,9 +1269,9 @@
 "Xstepspermm": 80,
 "Ystepspermm": 80,
 "Zstepspermm": 1065,
-"Xmaxspeed": 300,
-"Ymaxspeed": 300,
-"Zmaxspeed": 2,
+"Xmaxspeed": 150,
+"Ymaxspeed": 150,
+"Zmaxspeed": 4,
 "Xmanualspeed": 100,
 "Ymanualspeed": 100,
 "Zmanualspeed": 2,
@@ -1280,11 +1280,11 @@
 "minimumplannerspeed": 0.05,
 "Xmaxacceleration": 3000,
 "Ymaxacceleration": 3000,
-"Zmaxacceleration": 50,
-"defaultacceleration": 3000,
-"defaulttravelacceleration": 3000,
-"maxXjerk": 10,
-"maxYjerk": 10,
+"Zmaxacceleration": 20,
+"defaultacceleration": 2000,
+"defaulttravelacceleration": 1000,
+"maxXjerk": 15,
+"maxYjerk": 15,
 "maxZjerk": 0.4,
 "Xhomingspeed": 100,
 "Yhomingspeed": 100,
@@ -1321,7 +1321,7 @@
 "E9stepspermm": 625,
 "E10stepspermm": 625,
 "E11stepspermm": 625,
-"E0maxspeed": 100,
+"E0maxspeed": 50,
 "E1maxspeed": 100,
 "E2maxspeed": 100,
 "E3maxspeed": 100,
@@ -1345,7 +1345,7 @@
 "E9maxacceleration": 1000,
 "E10maxacceleration": 1000,
 "E11maxacceleration": 1000,
-"E0retractacceleration": 10000,
+"E0retractacceleration": 4000,
 "E1retractacceleration": 10000,
 "E2retractacceleration": 10000,
 "E3retractacceleration": 10000,

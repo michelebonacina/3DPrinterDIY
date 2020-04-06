@@ -1,0 +1,10 @@
+[filament]
+name = filament-abs-3dw
+diameter = 1.75
+multiplierPercent = 100
+printingTemperature = 255
+enableCooling = True
+bedTemperature = 95
+fanSpeedMin = 0
+fanSpeedMax = 0
+minimalLayerTime = 0
