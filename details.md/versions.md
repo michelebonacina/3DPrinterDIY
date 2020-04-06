@@ -87,3 +87,16 @@ Enabled hotend auto fan
 ### v 2.2.0
 Tuned hotend PID
 
+Tuned X Y Z speed and acceleration
+
+Tuned extruder speed and acceleration
+
+Changed Z home after nozzle change
+
+Added new version of MK4Duo 4.4.0 - some code optimization added
+
+Optimized jerk and acceleration
+
+Added LCD progress and removed - not supported - compile errors
+
+

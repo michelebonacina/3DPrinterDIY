@@ -229,6 +229,7 @@
 #include "sdcard/m34.h"
 #include "sdcard/m39.h"
 #include "sdcard/m524.h"
+#include "sdcard/m1001.h"
 
 // Sensor Commands
 #include "sensor/m70.h"
@@ -266,7 +267,7 @@
 #include "units/m83.h"
 #include "units/m149.h"
 
-#if ENABLED(FASTER_GCODE_EXECUTE) || ENABLED(ARDUINO_ARCH_SAM)
+#if ENABLED(FASTER_GCODE_EXECUTE)
   // Table for G and M code
   #include "table_gcode.h"
   #include "table_mcode.h"

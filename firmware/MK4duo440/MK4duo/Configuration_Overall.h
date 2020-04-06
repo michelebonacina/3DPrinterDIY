@@ -346,13 +346,13 @@
 #define DEFAULT_MIN_FEEDRATE          0.0
 #define DEFAULT_MIN_TRAVEL_FEEDRATE   0.0
 #define MINIMUM_PLANNER_SPEED         0.05                      // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION {3000,3000,20}
+#define DEFAULT_MAX_ACCELERATION {1000,1000,20}
 #define DEFAULT_MAX_ACCELERATION_E {3000,3000,3000,3000,3000,3000,1000,1000,1000,1000,1000,1000}
 #define DEFAULT_RETRACT_ACCELERATION {4000,10000,10000,10000,10000,10000,5000,5000,5000,5000,5000,5000}
-#define DEFAULT_ACCELERATION 2000
+#define DEFAULT_ACCELERATION 1000
 #define DEFAULT_TRAVEL_ACCELERATION 1000
-#define DEFAULT_XJERK 15
-#define DEFAULT_YJERK 15
+#define DEFAULT_XJERK 5
+#define DEFAULT_YJERK 5
 #define DEFAULT_ZJERK 0.4
 #define DEFAULT_EJERK {5,5,5,5,5,5,5,5,5,5,5,5}
 #define HOMING_FEEDRATE_X (100*60)
@@ -454,7 +454,10 @@
 //#define GAME_SNAKE
 //#define NO_LCD_MENUS
 //#define SLIM_LCD_MENUS
-#define ENCODER_PULSES_PER_STEP 5
+//#define ST7920_DELAY_1  DELAY_NS(0)
+//#define ST7920_DELAY_2  DELAY_NS(0)
+//#define ST7920_DELAY_3  DELAY_NS(64)
+#define ENCODER_PULSES_PER_STEP 3
 #define ENCODER_STEPS_PER_MENU_ITEM 1
 //#define LCD_SCREEN_ROT_90    // Rotate screen orientation for graphics display by 90 degree clockwise
 //#define LCD_SCREEN_ROT_180   // Rotate screen orientation for graphics display by 180 degree clockwise
@@ -889,7 +892,7 @@
 #define PROPORTIONAL_FONT_RATIO 1
 
 /********************************
- *  Configuration_Motor_Driver  *
+ *     Configuration_Driver     *
  ********************************/
 #define R_SENSE           0.11  // R_sense resistor
 #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
@@ -898,6 +901,7 @@
 #define X_STALL_SENSITIVITY 8
 #define Y_STALL_SENSITIVITY 8
 #define Z_STALL_SENSITIVITY 8
+#define PHASE_HOME { -1, -1, -1 }
 //#define SPI_ENDSTOPS
 //#define IMPROVE_HOMING_RELIABILITY
 //#define SQUARE_WAVE_STEPPING
@@ -1278,13 +1282,13 @@
 "minimumspeed": 0,
 "minimumtravelspeed": 0,
 "minimumplannerspeed": 0.05,
-"Xmaxacceleration": 3000,
-"Ymaxacceleration": 3000,
+"Xmaxacceleration": 1000,
+"Ymaxacceleration": 1000,
 "Zmaxacceleration": 20,
-"defaultacceleration": 2000,
+"defaultacceleration": 1000,
 "defaulttravelacceleration": 1000,
-"maxXjerk": 15,
-"maxYjerk": 15,
+"maxXjerk": 5,
+"maxYjerk": 5,
 "maxZjerk": 0.4,
 "Xhomingspeed": 100,
 "Yhomingspeed": 100,
@@ -1414,7 +1418,7 @@
 "lcdlanguages3": "NO_LANGUAGE",
 "lcdlanguages4": "NO_LANGUAGE",
 "displays": 5,
-"encoderpulsesstep": 5,
+"encoderpulsesstep": 3,
 "encoderstepmenu": 1,
 "invertclickbutton": "0",
 "invertbackbutton": "0",
@@ -1425,9 +1429,9 @@
 "nextion_port": 1,
 "nextion_baud": 57600,
 "nextionGFX": "0",
-"lcdprogressbar": 0,
-"lcdprogressbarbartime": 3,
-"lcdprogressbarmsgtime": 1,
+"lcdprogressbar": "0",
+"lcdprogressbarbartime": 2,
+"lcdprogressbarmsgtime": 2,
 "lcdprogressbarmsgexpire": 0,
 "doublequadstepping": "0",
 "junctiondeviation": "0",

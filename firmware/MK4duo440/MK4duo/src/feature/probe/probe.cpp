@@ -65,13 +65,13 @@ bool Probe::set_deployed(const bool deploy) {
 
   #if HAS_SLED
     if (mechanics.axis_unhomed_error(HOME_X)) {
-      SERIAL_LM(ER, MSG_HOST_STOP_UNHOMED);
+      SERIAL_LM(ER, STR_STOP_UNHOMED);
       printer.stop();
       return true;
     }
   #elif HAS_ALLEN_KEY
     if (mechanics.axis_unhomed_error()) {
-      SERIAL_LM(ER, MSG_HOST_STOP_UNHOMED);
+      SERIAL_LM(ER, STR_STOP_UNHOMED);
       printer.stop();
       return true;
     }
@@ -192,9 +192,9 @@ bool Probe::set_deployed(const bool deploy) {
           measured_z = NAN;
 
         if (verbose_level > 2) {
-          SERIAL_MV(MSG_HOST_BED_LEVELING_Z, measured_z, 3);
-          SERIAL_MV(MSG_HOST_BED_LEVELING_X, LOGICAL_X_POSITION(rx), 3);
-          SERIAL_MV(MSG_HOST_BED_LEVELING_Y, LOGICAL_Y_POSITION(ry), 3);
+          SERIAL_MV(STR_BED_LEVELING_Z, measured_z, 3);
+          SERIAL_MV(STR_BED_LEVELING_X, LOGICAL_X_POSITION(rx), 3);
+          SERIAL_MV(STR_BED_LEVELING_Y, LOGICAL_Y_POSITION(ry), 3);
           SERIAL_EOL();
         }
       }
@@ -203,7 +203,7 @@ bool Probe::set_deployed(const bool deploy) {
 
       if (isnan(measured_z)) {
         STOW_PROBE();
-        SERIAL_LM(ER, MSG_HOST_ERR_PROBING_FAILED);
+        SERIAL_LM(ER, STR_ERR_PROBING_FAILED);
         LCD_MESSAGEPGM(MSG_LCD_PROBING_FAILED);
         sound.feedback(false);
       }
@@ -389,10 +389,7 @@ void Probe::specific_action(const bool deploy) {
     lcdui.set_status_P(ds_str);
     SERIAL_STR(ds_str);
     SERIAL_EOL();
-
-    printer.setWaitForUser(true);
-    PRINTER_KEEPALIVE(PausedforUser);
-    while (printer.isWaitForUser()) printer.idle();
+    printer.wait_for_user_response();
     lcdui.reset_status();
 
   #endif // PAUSE_BEFORE_DEPLOY_STOW
@@ -570,8 +567,8 @@ void Probe::print_error() {
 
   void Probe::run_deploy_moves_script() {
 
-    const float z_probe_deploy_start_location[]  = Z_PROBE_DEPLOY_START_LOCATION,
-                z_probe_deploy_end_location[]    = Z_PROBE_DEPLOY_END_LOCATION;
+    constexpr xyz_pos_t z_probe_deploy_start_location = Z_PROBE_DEPLOY_START_LOCATION,
+                        z_probe_deploy_end_location   = Z_PROBE_DEPLOY_END_LOCATION;
 
     // Move to the start position to initiate deployment
     mechanics.do_blocking_move_to(z_probe_deploy_start_location, mechanics.homing_feedrate_mm_s.z);
@@ -581,11 +578,13 @@ void Probe::print_error() {
 
     // Move to trigger deployment
     mechanics.do_blocking_move_to(z_probe_deploy_start_location, mechanics.homing_feedrate_mm_s.z);
+
   }
+
   void Probe::run_stow_moves_script() {
 
-    const float z_probe_retract_start_location[] = Z_PROBE_RETRACT_START_LOCATION,
-                z_probe_retract_end_location[] = Z_PROBE_RETRACT_END_LOCATION;
+    constexpr xyz_pos_t z_probe_retract_start_location  = Z_PROBE_RETRACT_START_LOCATION,
+                        z_probe_retract_end_location    = Z_PROBE_RETRACT_END_LOCATION;
 
     // Move to the start position to initiate retraction
     mechanics.do_blocking_move_to(z_probe_retract_start_location, mechanics.homing_feedrate_mm_s.z);
@@ -595,6 +594,7 @@ void Probe::print_error() {
 
     // Move up for safety
     mechanics.do_blocking_move_to(z_probe_retract_start_location, mechanics.homing_feedrate_mm_s.z);
+
   }
 
 #endif

@@ -270,18 +270,8 @@ void gcode_G2_G3(const bool clockwise) {
 
     commands.get_destination();
 
-    #if ENABLED(LASER) && ENABLED(LASER_FIRE_G1)
-      #if ENABLED(INTENSITY_IN_BYTE)
-        if (parser.seenval('S')) laser.intensity = ((float)parser.value_byte() / 255.0) * 100.0;
-      #else
-        if (parser.seenval('S')) laser.intensity = parser.value_float();
-      #endif
-      if (parser.seenval('L')) laser.duration = parser.value_ulong();
-      if (parser.seenval('P')) laser.ppm = parser.value_float();
-      if (parser.seenval('D')) laser.diagnostics = parser.value_bool();
-      if (parser.seenval('B')) laser.set_mode(parser.value_int());
-
-      laser.status = LASER_ON;
+    #if HAS_LASER_FIRE_G1
+      laser.set_power();
     #endif
 
     #if ENABLED(SF_ARC_FIX)
@@ -315,7 +305,7 @@ void gcode_G2_G3(const bool clockwise) {
         // P indicates number of circles to do
         int8_t circles_to_do = parser.byteval('P');
         if (!WITHIN(circles_to_do, 0, 100))
-          SERIAL_LM(ER, MSG_HOST_ERR_ARC_ARGS);
+          SERIAL_LM(ER, STR_ERR_ARC_ARGS);
         while (circles_to_do--)
           plan_arc(mechanics.position, arc_offset, clockwise);
       #endif
@@ -326,10 +316,10 @@ void gcode_G2_G3(const bool clockwise) {
     }
     else {
       // Bad arguments
-      SERIAL_LM(ER, MSG_HOST_ERR_ARC_ARGS);
+      SERIAL_LM(ER, STR_ERR_ARC_ARGS);
     }
 
-    #if ENABLED(LASER) && ENABLED(LASER_FIRE_G1)
+    #if HAS_LASER_FIRE_G1
       laser.status = LASER_OFF;
     #endif
   }

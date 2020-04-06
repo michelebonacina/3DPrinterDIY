@@ -1,6 +1,11 @@
 # 3D Printer DIY
-Self made 3D Printer Project
+Self made 3D Printer Project.
 
+First firmware version (MarlinKimbraR2) does not activate hot bed. This is the main reason for changing it with the MK4duo version.
+
+Now the firmware is not fully optimized, but the actual result is pretty good.
+
+Take a look to _Issues_ for problems and future improvements.
 
 ## Firmware
 
