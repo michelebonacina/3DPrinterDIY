@@ -487,9 +487,9 @@
 #define LED_USER_PRESET_BLUE       255  // User defined BLUE value
 #define LED_USER_PRESET_WHITE      255  // User defined WHITE value
 #define LED_USER_PRESET_BRIGHTNESS 255  // User defined intensity
-#define LCD_PROGRESS_BAR
-#define PROGRESS_BAR_BAR_TIME 2000
-#define PROGRESS_BAR_MSG_TIME 2000
+//#define LCD_PROGRESS_BAR
+#define PROGRESS_BAR_BAR_TIME 5000U
+#define PROGRESS_BAR_MSG_TIME 1500U
 #define PROGRESS_MSG_EXPIRE 0
 //#define PROGRESS_MSG_ONCE
 //#define LCD_PROGRESS_BAR_TEST
@@ -1429,7 +1429,7 @@
 "nextion_port": 1,
 "nextion_baud": 57600,
 "nextionGFX": "0",
-"lcdprogressbar": "1",
+"lcdprogressbar": "0",
 "lcdprogressbarbartime": 2,
 "lcdprogressbarmsgtime": 2,
 "lcdprogressbarmsgexpire": 0,
