@@ -304,7 +304,7 @@
 #define Y_MAX_POS 170
 #define Y_MIN_POS 0
 #define Z_MAX_POS 260
-#define Z_MIN_POS -0.7
+#define Z_MIN_POS -0.8
 #define E_MIN_POS 0
 #define AXIS_RELATIVE_MODES {false, false, false, false}
 //#define Z_SAFE_HOMING
@@ -1232,7 +1232,7 @@
 "Ymaxpos": 170,
 "Yminpos": 0,
 "Zmaxpos": 260,
-"Zminpos": -0.7,
+"Zminpos": -0.8,
 "Zsafehoming": "0",
 "ZsafehomingX": 100,
 "ZsafehomingY": 100,
