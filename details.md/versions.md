@@ -99,4 +99,7 @@ Optimized jerk and acceleration
 
 Added LCD progress and removed - not supported - compile errors
 
+### v 2.3.0
+
+Updated extruder steps/mm 
 
