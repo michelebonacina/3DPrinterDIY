@@ -46,7 +46,7 @@
 //#define SERIAL_XON_XOFF
 //#define SERIAL_STATS_MAX_RX_QUEUED
 //#define SERIAL_STATS_DROPPED_RX
-#define STRING_CONFIG_AUTHOR "(cinna, 3Dw 2.2.0)"
+#define STRING_CONFIG_AUTHOR "(cinna, 3Dw 2.2.1)"
 #define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
 #define KILL_METHOD 0
 #define NO_TIMEOUTS 1000
@@ -207,7 +207,7 @@
  * Configuration_Cartesian *
  ***************************/
 #define KNOWN_MECH
-#define CUSTOM_MACHINE_NAME "3Dw 2.2.0"
+#define CUSTOM_MACHINE_NAME "3Dw 2.2.1"
 #define ENDSTOPPULLUP_XMIN true
 #define ENDSTOPPULLUP_YMIN true
 #define ENDSTOPPULLUP_ZMIN true
@@ -1023,7 +1023,7 @@
 "rxbuffersize": 128,
 "serialxonxoff": "0",
 "customname": "cinna",
-"customconfig": "3Dw 2.2.0",
+"customconfig": "3Dw 2.2.1",
 "machineuuid": "00000000-0000-0000-0000-000000000000",
 "killMethod": 0,
 "notimeouts": 1000,
@@ -1206,7 +1206,7 @@
 "watchchambertempincrease": 2,
 "watchcoolertempperiod": 60,
 "watchcoolertempincrease": 2,
-"uiprintername": "3Dw 2.2.0",
+"uiprintername": "3Dw 2.2.1",
 "endstopinterrupt": "0",
 "Xminendstop": "0",
 "Xmaxendstop": "0",
