@@ -338,7 +338,7 @@
 //#define MANUAL_Y_HOME_POS 0
 //#define MANUAL_Z_HOME_POS 0
 #define DEFAULT_AXIS_STEPS_PER_UNIT {80,80,1065}
-#define DEFAULT_AXIS_STEPS_PER_UNIT_E {95,625,625,625,625,625,625,625,625,625,625,625}
+#define DEFAULT_AXIS_STEPS_PER_UNIT_E {93,625,625,625,625,625,625,625,625,625,625,625}
 #define DEFAULT_MAX_FEEDRATE {150,150,4}
 #define DEFAULT_MAX_FEEDRATE_E {50,100,100,100,100,100,50,50,50,50,50,50}
 #define MANUAL_FEEDRATE {100,100,2,10}
@@ -1313,7 +1313,7 @@
 "hysteresisYmm": 0,
 "hysteresisZmm": 0,
 "hysteresiscorrection": 1,
-"E0stepspermm": 95,
+"E0stepspermm": 93,
 "E1stepspermm": 625,
 "E2stepspermm": 625,
 "E3stepspermm": 625,
